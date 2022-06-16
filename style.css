@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: rgb(231, 231, 231);
+  background-color: #1a0218a6;
   background: url('./assets/img/bg.jpg') repeat top center / 100%;
   object-fit: cover;
   color: #f0f0f0;
@@ -23,7 +23,6 @@ body {
   margin-top: 3rem;
   background-color: #1a0218a6;
   background: linear-gradient(225deg, #1a0218a6, #062729d2);
-  /* padding: 0rem 3rem 3rem; */
   border-radius: 0.5rem;
   border: 1px solid #023c3ffa;
   box-shadow: 0 0 55px 15px #02f2ff3d;
@@ -32,7 +31,7 @@ h1 {
   background-color: #02f2ff42;
   color: #26a9f5;
   font-weight: 600;
-  text-shadow: 0 9px 18px #000000;
+  text-shadow: 0 9px 18px #000;
   background-color: #02f2ff42;
   background: linear-gradient(45deg, #02f2ff42, #062729d2),
     repeating-linear-gradient(
@@ -42,21 +41,22 @@ h1 {
       transparent 3px,
       transparent 8px
     );
-  box-shadow: 0 0 55px 15px rgba(14, 0, 22, 0.527);
+  box-shadow: 0 0 55px 15px #0e001686;
   border: 1px solid #023c3f8e;
   padding-block: 1rem;
-  border-radius: 0.3rem;
+  border-radius: 0.4rem;
   border-bottom: 3px solid #02f2ff80;
 }
 .list-group {
   border: 1px solid #0cdbe671;
+  border-radius: 0.4rem;
   /* border: 1px solid #023c3ffa; */
 }
 .list-group-item {
   background-color: #02f2ff42;
   background: linear-gradient(45deg, #02f2ff42, #062729d2);
   color: #f0f0f0;
-  box-shadow: 0 0 55px 15px rgba(14, 0, 22, 0.527);
+  box-shadow: 0 0 55px 15px #0e001686;
   border: none;
   padding-block: 0.7rem;
   padding-inline: 1rem;
@@ -74,6 +74,7 @@ textarea.form-control#list-words {
   letter-spacing: 1px;
   padding-block: 0.7rem;
   border-bottom: 3px solid #02f2ff80;
+  border-radius: 0.4rem;
 }
 
 .error-msg {
@@ -92,32 +93,31 @@ textarea.form-control#list-words {
   background-color: #1375b78f;
   background: linear-gradient(45deg, #02f2ff42, #062729d2);
   color: white;
+  text-shadow: 0 3px 3px #000;
   box-shadow: 0 0 15px 5px rgba(14, 0, 22, 0.527);
   padding-inline: 2rem;
   border-bottom: 3px solid #02f2ff80;
   letter-spacing: 1px;
+  border-radius: 0.4rem;
 }
 .btn.btn-send:hover,
 .btn.btn-send:focus,
 .btn.btn-send:active {
   outline: none;
   box-shadow: none;
-  background-color: #015c8f;
-  color: white;
+  background-color: #015b8fb4;
 }
 
 p#result-msg {
   margin-block: 0 !important;
   font-weight: 700;
 }
-p#result-msg:not(.active) {
-  background-color: red;
+p#result-msg {
   opacity: 0;
 }
 p#result-msg.active {
   animation: fadeUp 0.6s ease-in-out forwards;
   transform: translateY(2rem);
-  opacity: 0;
 }
 
 @keyframes fadeUp {
