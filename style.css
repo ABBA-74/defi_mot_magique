@@ -15,6 +15,7 @@ body {
   color: #f0f0f0;
   letter-spacing: 1px;
   font-size: 1rem;
+  line-height: 2;
   min-height: 100vh;
 }
 
@@ -69,7 +70,9 @@ textarea.form-control#list-words {
   box-shadow: 0 0 55px 15px rgba(14, 0, 22, 0.527);
   border: 1px solid #0cdbe617;
   color: #f0f0f0;
+  line-height: 2;
   letter-spacing: 1px;
+  padding-block: 0.7rem;
   border-bottom: 3px solid #02f2ff80;
 }
 
@@ -92,6 +95,7 @@ textarea.form-control#list-words {
   box-shadow: 0 0 15px 5px rgba(14, 0, 22, 0.527);
   padding-inline: 2rem;
   border-bottom: 3px solid #02f2ff80;
+  letter-spacing: 1px;
 }
 .btn.btn-send:hover,
 .btn.btn-send:focus,

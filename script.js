@@ -50,11 +50,11 @@ const getCode = (arrWord) => {
 const isValideListWords = (arr) => {
   const regexletter = /[^a-zA-Z-]/g;
   let err = '';
-  if (arr.length < 3) err = 'La liste de mots doit contenir plus de 3 mots';
+  if (arr.length < 10) err = 'La liste de mots doit contenir plus de 10 mots';
   arr.forEach((item) => {
     item.length > 20 && (err = 'Un mot ne doit pas dépasser 20 caractères');
     item.length < 2 && (err = 'Un mot doit être supérieur à 1 caractère');
-    regexletter.test(item) && (err = `Présence de mot incorrect "${item}"`);
+    regexletter.test(item) && (err = `Présence de mot incorrect : "${item}"`);
   });
 
   if (err) {
