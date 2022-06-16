@@ -86,8 +86,8 @@ const displayResult = (arrWords) => {
   if (arrWords.length > 0) {
     resultMsg.classList.remove('text-danger');
     resultMsg.classList.add('text-success');
-    qtyWordMatched = arrWords.length;
     arrWordMatched = [...new Set(arrWords)];
+    qtyWordMatched = arrWordMatched.length;
     sentenceResult =
       arrWordMatched.length > 1
         ? 'Mots magiques trouvés'
