@@ -11,7 +11,7 @@
 body {
   background-color: rgb(231, 231, 231);
   background: url('./assets/img/bg.jpg') repeat top center / 100%;
-  object-fit: contain;
+  object-fit: cover;
   color: #f0f0f0;
   letter-spacing: 1px;
   font-size: 1rem;
