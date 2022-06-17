@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap');
 
+:root {
+  --text-sm-shadow: 0 3px 3px rgb(0, 0, 0);
+  --clr-txt-light: #f0f0f0;
+  --clr-txt-warning: #fec73d;
+  --br-sm: 0.6rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,9 +17,9 @@
 
 body {
   background-color: #1a0218a6;
-  background: url('./assets/img/bg.jpg') repeat top center / 100%;
+  background: url('./assets/img/bg.jpg') repeat-y top center / 100%;
   object-fit: cover;
-  color: #f0f0f0;
+  color: var(--clr-txt-light);
   letter-spacing: 1px;
   font-size: 1rem;
   line-height: 2;
@@ -23,7 +30,7 @@ body {
   margin-top: 3rem;
   background-color: #1a0218a6;
   background: linear-gradient(225deg, #1a0218a6, #062729d2);
-  border-radius: 0.5rem;
+  border-radius: var(--br-sm);
   border: 1px solid #023c3ffa;
   box-shadow: 0 0 55px 15px #02f2ff3d;
 }
@@ -44,18 +51,18 @@ h1 {
   box-shadow: 0 0 55px 15px #0e001686;
   border: 1px solid #023c3f8e;
   padding-block: 1rem;
-  border-radius: 0.4rem;
+  border-radius: var(--br-sm);
   border-bottom: 3px solid #02f2ff80;
 }
 .list-group {
   border: 1px solid #0cdbe671;
-  border-radius: 0.4rem;
+  border-radius: var(--br-sm);
   /* border: 1px solid #023c3ffa; */
 }
 .list-group-item {
   background-color: #02f2ff42;
   background: linear-gradient(45deg, #02f2ff42, #062729d2);
-  color: #f0f0f0;
+  color: var(--clr-txt-light);
   box-shadow: 0 0 55px 15px #0e001686;
   border: none;
   padding-block: 0.7rem;
@@ -69,12 +76,12 @@ textarea.form-control#list-words {
   background: linear-gradient(45deg, #02f2ff42, #062729d2);
   box-shadow: 0 0 55px 15px rgba(14, 0, 22, 0.527);
   border: 1px solid #0cdbe617;
-  color: #f0f0f0;
+  color: var(--clr-txt-light);
   line-height: 2;
   letter-spacing: 1px;
   padding-block: 0.7rem;
   border-bottom: 3px solid #02f2ff80;
-  border-radius: 0.4rem;
+  border-radius: var(--br-sm);
 }
 
 .error-msg {
@@ -84,7 +91,7 @@ textarea.form-control#list-words {
   background-color: rgba(255, 255, 255, 0.61);
   background: linear-gradient(45deg, #02f2ff75, #062729d2);
   color: #180516d8;
-  font-weight: 600;
+  color: var(--clr-txt-warning);
   border: none;
   border-bottom: 3px solid #02f2ff80;
 }
@@ -92,13 +99,13 @@ textarea.form-control#list-words {
 .btn.btn-send {
   background-color: #1375b78f;
   background: linear-gradient(45deg, #02f2ff42, #062729d2);
-  color: white;
-  text-shadow: 0 3px 3px #000;
+  color: var(--clr-txt-light);
+  text-shadow: var(--text-sm-shadow);
   box-shadow: 0 0 15px 5px rgba(14, 0, 22, 0.527);
   padding-inline: 2rem;
   border-bottom: 3px solid #02f2ff80;
   letter-spacing: 1px;
-  border-radius: 0.4rem;
+  border-radius: var(--br-sm);
 }
 .btn.btn-send:hover,
 .btn.btn-send:focus,
@@ -110,16 +117,21 @@ textarea.form-control#list-words {
 
 p#result-msg {
   margin-block: 0 !important;
-  font-weight: 700;
-}
-p#result-msg {
+  /* font-weight: 300; */
+  line-height: 1.4;
   opacity: 0;
 }
 p#result-msg.active {
   animation: fadeUp 0.6s ease-in-out forwards;
   transform: translateY(2rem);
 }
-
+.text-success-matched {
+  color: #03d4cf;
+  text-shadow: var(--text-sm-shadow);
+}
+.text-error-no-matched {
+  color: var(--clr-txt-warning);
+}
 @keyframes fadeUp {
   to {
     transform: translateY(0);

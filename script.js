@@ -49,18 +49,18 @@ const getCode = (arrWord) => {
 
 const isValideListWords = (arr) => {
   const regexletter = /[^a-zA-Z-]/g;
-  let err = '';
+  let error = '';
   if (arr.length < 10)
-    err = 'La liste de mots doit contenir au minimum 10 mots';
+    error = 'La liste de mots doit contenir au minimum 10 mots';
   arr.forEach((item) => {
-    item.length > 20 && (err = 'Un mot ne doit pas dépasser 20 caractères');
-    item.length < 2 && (err = 'Un mot doit être supérieur à 1 caractère');
-    regexletter.test(item) && (err = `Présence de mot incorrect : "${item}"`);
+    item.length > 20 && (error = 'Un mot ne doit pas dépasser 20 caractères');
+    item.length < 2 && (error = 'Un mot doit être supérieur à 1 caractère');
+    regexletter.test(item) && (error = `Présence de mot incorrect : "${item}"`);
   });
 
-  if (err) {
+  if (error) {
     errMsg.classList.remove('d-none');
-    errMsg.textContent = err;
+    errMsg.textContent = error;
     return false;
   } else {
     errMsg.classList.add('d-none');
@@ -85,8 +85,8 @@ const handleStringInput = () => {
 
 const displayResult = (arrWords) => {
   if (arrWords.length > 0) {
-    resultMsg.classList.remove('text-danger');
-    resultMsg.classList.add('text-success');
+    resultMsg.classList.remove('text-error-no-matched');
+    resultMsg.classList.add('text-success-matched');
     arrWordMatched = [...new Set(arrWords)];
     qtyWordMatched = arrWordMatched.length;
     sentenceResult =
@@ -97,15 +97,15 @@ const displayResult = (arrWords) => {
       resultMsg.classList.add('active');
     }, 600);
 
-    resultMsg.innerText = `Nombre de mot magique trouvé: ${qtyWordMatched} \n${sentenceResult}: ${arrWordMatched.join(
+    resultMsg.innerText = `Nombre de mot magique trouvé: ${qtyWordMatched} \n${sentenceResult}:\n ${arrWordMatched.join(
       ', '
     )}`;
   } else {
     setTimeout(() => {
       resultMsg.classList.add('active');
     }, 600);
-    resultMsg.classList.remove('text-success');
-    resultMsg.classList.add('text-danger');
+    resultMsg.classList.remove('text-success-matched');
+    resultMsg.classList.add('text-error-no-matched');
 
     resultMsg.innerText =
       "Aucun mot magique \nn'a été trouvé dans votre liste 😭";
