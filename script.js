@@ -33,12 +33,23 @@ const alphabet = [
 const getCode = (arrWord) => {
   const regexVowels = /[aeiouy]/;
   let arrWordsMached = [];
+  const accents = 'ÁÉÍÓÚáéíóúâêîôûàèìòùÇç';
+  // const sans_accents = accents.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  // alert(sans_accents);
+
   arrWord.forEach((item) => {
+    let itemWithoutAccent = item
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
     if (item.length >= 5 && item.length <= 7) {
-      if (regexVowels.test(item.toLowerCase().slice(-1))) {
+      if (regexVowels.test(itemWithoutAccent.toLowerCase().slice(-1))) {
         let nextLetterMatchedCode =
-          alphabet[alphabet.indexOf(item.toLowerCase().slice(0, 1)) + 1];
-        if (item.toLowerCase().slice(1, 2) === nextLetterMatchedCode) {
+          alphabet[
+            alphabet.indexOf(itemWithoutAccent.toLowerCase().slice(0, 1)) + 1
+          ];
+        if (
+          itemWithoutAccent.toLowerCase().slice(1, 2) === nextLetterMatchedCode
+        ) {
           arrWordsMached.push(item);
         }
       }
@@ -48,7 +59,7 @@ const getCode = (arrWord) => {
 };
 
 const isValideListWords = (arr) => {
-  const regexletter = /[^a-zA-Z-]/g;
+  const regexletter = /[^a-zA-ZÀ-ÿ-]/g;
   let error = '';
   if (arr.length < 10)
     error = 'La liste de mots doit contenir au minimum 10 mots';
